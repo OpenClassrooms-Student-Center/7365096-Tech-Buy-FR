@@ -1,0 +1,73 @@
+/** CONTACT PAGE **/
+div#contact-page {
+  display: flex;
+  justify-content: space-around;
+}
+
+div#contact-page > section {
+  background: white;
+  border-radius: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.02);
+  width: 500px;
+  max-width: 45%;
+  padding: 30px 45px;
+}
+
+div#contact-page > section h2 {
+  margin-top: 0;
+}
+
+.contact-address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-address button {
+  border: 1px solid #52CCA0;
+  background: white;
+  color: #52CCA0;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+section#contact-place p {
+  margin: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+section#contact-place .contact-address > p {
+  margin: 0;
+}
+
+#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea, #contact-form button {
+  width: 100%;
+}
+
+
+.ng-submitted .ng-invalid {
+  border-color: red;
+}
+
+p.success {
+  font-style: italic;
+  color: green;
+  text-align: center;
+}
+
+@media all and (max-width: 850px) {
+  div#contact-page {
+    flex-direction: column;
+    margin: 0 15px;
+  }
+
+  div#contact-page > section {
+    max-width: initial !important;
+    width: 100% !important;
+  }
+}

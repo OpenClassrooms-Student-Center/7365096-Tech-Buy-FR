@@ -1,0 +1,160 @@
+section#product-description {
+  background: #F2F7F9;
+  padding: 35px 15px;
+}
+
+section#product-description > div {
+  background: white;
+  border-radius: 30px;
+  padding: 25px 50px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section#product-description h2 {
+  max-width: 1250px;
+  margin: 25px auto;
+}
+
+section#product-infos > div {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  max-width: 90%;
+  margin: 15px;
+  justify-content: center;
+}
+
+section#product-infos div.product-slider {
+  max-width: 50%;
+  position: relative;
+  max-height: 80%;
+  overflow: hidden;
+}
+
+section#product-infos div.product-slider img {
+  border-radius: 30px;
+  margin: 50px auto;
+  width: 100%;
+  object-fit: cover;
+  height: calc(100% - 100px);
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.product-details {
+  width: 50%;
+}
+
+.product-details hr {
+  border: none;
+  border-top: 1px solid #D9D9D9;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.product-details button {
+  background: #52CCA0;
+  border: none;
+  color: white;
+  width: 260px;
+  height: 58px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+a.product-description-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dots span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-left {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: white;
+  font-size: 35px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: white;
+  font-size: 35px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.dots .active-dot {
+  background: #ffffffaa;
+}
+
+section#suggestions {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 10px;
+}
+
+.image-slider {
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  transition: 0.5s;
+  display: flex;
+}
+
+@media all and (max-width: 1050px) {
+}
+
+@media all and (max-width: 850px) {
+  section#product-infos > div {
+    flex-direction: column;
+  }
+  section#product-infos div.product-slider {
+    max-width: initial;
+  }
+
+  section#product-infos div.product-slider img {
+    margin-bottom: 0;
+  }
+
+  .dots {
+    bottom: 10px;
+  }
+
+  .product-details {
+    width: 100%;
+  }
+
+  .image-slider {
+    height: auto;
+  }
+}
+
+@media all and (max-width: 625px) {
+  .image-slider {
+    width: 300px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,79 @@
+<section id="accessory">
+  <h1>L'accessoire indispensable</h1>
+  <p>Avec la souris, le clavier est le deuxième moyen de communiquer avec son ordinateur</p>
+  <a [routerLink]="['/category/3']" class="btn-white">Découvrir</a>
+</section>
+<section id="bestsellers">
+  <h2>Nos meilleures ventes</h2>
+  <p>Attention, il n'y en aura pas pour tout le monde !</p>
+  <div class="list-products">
+    <div class="mini-product" *ngFor="let product of bestProducts">
+      <a [routerLink]="['/product', product.id]">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="mini-product-infos">
+          <h3><span>{{ product.name }}</span> <span>{{ product.price|number:'1.2-2':'fr' }} €</span></h3>
+          <p>{{ product.shortDescription }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="categories">
+  <h2>Catégories par produit</h2>
+  <p>Attention, il n'y en aura pas pour tout le monde !</p>
+
+  <div class="categories-list">
+    <div id="category-screens"><a [routerLink]="['/category/1']"><h3>Écrans d'ordinateurs</h3></a></div>
+    <div id="category-computers"><a [routerLink]="['/category/2']"><h3>Ordinateurs</h3></a></div>
+    <div id="category-accessories"><a [routerLink]="['/category/3']"><h3>Souris & claviers</h3></a></div>
+  </div>
+</section>
+<section id="promise">
+  <h2>Notre promesse</h2>
+  <div class="promise-list">
+    <div class="promise">
+      <img src="assets/best.png" alt="Meilleure offre disponible">
+      <h3>Meilleure offre disponible</h3>
+      <p>Une sélection de produits au juste prix</p>
+    </div>
+    <div class="promise">
+      <img src="assets/respect.png" alt="Qualité garantie">
+      <h3>Qualité garantie</h3>
+      <p>Nos fournisseurs respectent notre charte</p>
+    </div>
+    <div class="promise">
+      <img src="assets/secured.png" alt="Paiement sécurisé">
+      <h3>Paiement sécurisé</h3>
+      <p>Par carte bancaire, Paypal et virement</p>
+    </div>
+    <div class="promise">
+      <img src="assets/delivery.png" alt="Livraison 24h">
+      <h3>Livraison 24h</h3>
+      <p>En France et en Europe (hors USA & Asie)</p>
+    </div>
+  </div>
+</section>
+<section id="suggestions">
+  <h2>Nos suggestions pour vous</h2>
+  <p>Profitez de produits exclusifs uniquement disponibles sur TECH&BUY</p>
+  <div class="list-products">
+    <div class="mini-product" *ngFor="let product of suggestedProducts">
+      <a [routerLink]="['/product', product.id]">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="mini-product-infos">
+          <h3><span>{{ product.name }}</span> <span>{{ product.price|number:'1.2-2':'fr' }} €</span></h3>
+          <p>{{ product.shortDescription }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="brands">
+  <h2>Nos marques partenaires</h2>
+  <div class="brand-list">
+    <img src="assets/samsung.png" alt="Samsung">
+    <img src="assets/sony.png" alt="Sony">
+    <img src="assets/acer.png" alt="Acer">
+    <img src="assets/microsoft.png" alt="Microsoft">
+  </div>
+</section>

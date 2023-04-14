@@ -1,0 +1,72 @@
+<section id="product-infos">
+  <div>
+    <div class="product-slider">
+      <div class="image-slider" #imgSlider>
+        <img [src]="product.image" [alt]="product.name"/>
+        <img [src]="product.image" [alt]="product.name"/>
+        <img [src]="product.image" [alt]="product.name"/>
+      </div>
+      <div class="dots">
+        <span [ngClass]="{'active-dot': imageToShow === 1}" (click)="goTo(1)"></span>
+        <span [ngClass]="{'active-dot': imageToShow === 2}" (click)="goTo(2)"></span>
+        <span [ngClass]="{'active-dot': imageToShow === 3}" (click)="goTo(3)"></span>
+      </div>
+      <div class="arrow-left" (click)="prev()">‹</div>
+      <div class="arrow-right" (click)="next()">›</div>
+    </div>
+    <div class="product-details">
+      <h1>{{ product.name }}</h1>
+      <p class="product-price">{{ product.price|number:'1.2-2':'fr' }} €</p>
+      <p class="mini-description"><span style="text-decoration: underline;">Référence : {{ product.reference }}</span><br>{{ product.shortDescription }}</p>
+      <a href="#" class="product-description-link">Voir la description détaillée <img src="assets/see-more.png"
+                                                                                      alt="Voir la description détaillée"/></a>
+      <hr/>
+      <div class="product-add">
+        <button (click)="addToCart()">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="product-description">
+  <h2>Description</h2>
+  <div [innerHTML]="product.description">
+  </div>
+</section>
+<section id="suggestions">
+  <h2>Les indispensables</h2>
+  <div class="list-products">
+    <div class="mini-product" *ngFor="let product of bestProducts">
+      <a [routerLink]="['/product', product.id]">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="mini-product-infos">
+          <h3><span>{{ product.name }}</span> <span>{{ product.price|number:'1.2-2':'fr' }} €</span></h3>
+          <p>{{ product.shortDescription }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="promise">
+  <div class="promise-list">
+    <div class="promise">
+      <img src="assets/best.png" alt="Meilleure offre disponible">
+      <h3>Meilleure offre disponible</h3>
+      <p>Une sélection de produits au juste prix</p>
+    </div>
+    <div class="promise">
+      <img src="assets/respect.png" alt="Qualité garantie">
+      <h3>Qualité garantie</h3>
+      <p>Nos fournisseurs respectent notre charte</p>
+    </div>
+    <div class="promise">
+      <img src="assets/secured.png" alt="Paiement sécurisé">
+      <h3>Paiement sécurisé</h3>
+      <p>Par carte bancaire, Paypal et virement</p>
+    </div>
+    <div class="promise">
+      <img src="assets/delivery.png" alt="Livraison 24h">
+      <h3>Livraison 24h</h3>
+      <p>En France et en Europe (hors USA & Asie)</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+<article>
+  <h1>{{ category?.name }}</h1>
+  <div class="list-products">
+    <div class="mini-product" *ngFor="let product of products">
+      <a [routerLink]="['/product', product.id]">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="mini-product-infos">
+          <h3><span>{{ product.name }}</span> <span>{{ product.price|number:'1.2-2':'fr' }} €</span></h3>
+          <p>{{ product.shortDescription }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</article>

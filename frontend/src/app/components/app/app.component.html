@@ -1,0 +1,30 @@
+<header id="main-header">
+  <div>
+    <a [routerLink]="['/']"><img src="assets/logo.png" alt="Tech&Buy"></a>
+    <a [routerLink]="['/cart']"><img src="assets/cart.png" alt="Panier"></a>
+  </div>
+</header>
+<nav id="main-nav">
+  <ul>
+    <li><a [routerLink]="['/products']">Tous les produits</a></li>
+    <li *ngFor="let category of categories"><a [routerLink]="['/category', category.id]">{{ category.name }}</a></li>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer id="main-footer">
+  <div>
+    <ul class="footer-links">
+      <li><a [routerLink]="['/category', categories[0]?.id]">{{ categories[0]?.name }}</a></li>
+      <li><a [routerLink]="['/category', categories[1]?.id]">{{ categories[1]?.name }}</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a [routerLink]="['/category', categories[2]?.id]">{{ categories[2]?.name }}</a></li>
+      <li><a [routerLink]="['/contact']">Contactez-nous</a></li>
+    </ul>
+    <div><a [routerLink]="['/']"><img src="assets/logo-footer.png" alt="Tech&Buy"></a></div>
+  </div>
+</footer>

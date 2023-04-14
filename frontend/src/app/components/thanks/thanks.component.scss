@@ -1,0 +1,33 @@
+section#thanks {
+  max-width: 425px;
+  width: 100%;
+  margin: 35px auto;
+  background: #c42828;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.02);
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 50px;
+
+  h1 {
+    font-size: 37px;
+  }
+
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+@media all and (max-width: 550px) {
+  section#thanks {
+    width: 95%;
+  }
+}

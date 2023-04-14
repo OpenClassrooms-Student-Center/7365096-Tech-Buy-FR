@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  angular:
+    build: ./frontend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - symfony
+
+  symfony:
+    build: ./backend
+    ports:
+      - 8081:8081
+    volumes:
+      - ./backend:/backend
+    environment:
+      - DATABASE_URL=mysql://root:techbuy@mysql:3306/techbuy?serverVersion=8&charset=utf8mb4
+    depends_on:
+      - mysql
+    networks:
+      - symfony
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=techbuy
+      - MYSQL_ROOT_PASSWORD=techbuy
+      - MYSQL_USER=techbuy
+      - MYSQL_PASSWORD=techbuy
+
+    volumes:
+      - ./data:/docker-entrypoint-initdb.d
+      - ./mysql:/var/lib/mysql
+    networks:
+      - symfony
+    ports:
+      - 3308:3306
+
+      
+networks:
+  symfony:
+  
+volumes:
+  data:

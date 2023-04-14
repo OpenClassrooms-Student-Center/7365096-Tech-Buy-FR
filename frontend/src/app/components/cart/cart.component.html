@@ -1,0 +1,41 @@
+<div id="cart">
+  <section id="cart-container">
+    <h2>Votre panier</h2>
+    <div id="cart-content">
+      <div class="cart-line" *ngFor="let product of products">
+        <img [src]="product.image" [alt]="product.name" />
+        <p>{{ product.name }}<br>Référence : {{ product.reference }}</p>
+        <input type="number" [value]="product.quantity" />
+        <button (click)="removeProduct(product)">Supprimer</button>
+      </div>
+      <div class="cart-line" *ngIf="products.length === 0">
+        <p>Votre panier est vide. :(</p>
+      </div>
+    </div>
+  </section>
+  <section id="cart-total" *ngIf="products.length > 0">
+    <h2>Récapitulatif</h2>
+    <div class="total-cart-part">
+      <p><span>{{ getNbProducts() }} article{{ getNbProducts() > 1 ? 's' : '' }}</span><span>{{ getTotal() | number:'1.2-2':'fr' }} €</span></p>
+      <p><span>Frais de livraison</span><span>Gratuit</span></p>
+      <p><span>Frais de service</span><span>7, 99 €</span></p>
+      <hr />
+      <p><strong>Total panier</strong><strong>{{ (getTotal() + 7.99) | number:'1.2-2':'fr' }} €</strong></p>
+      <button [routerLink]="['/order']">Passer la commande</button>
+    </div>
+  </section>
+</div>
+<section id="more-products">
+  <h2>Voir d'autres produits</h2>
+  <div class="list-products">
+    <div class="mini-product" *ngFor="let product of otherProducts">
+      <a [routerLink]="['/product', product.id]">
+        <img [src]="product.image" [alt]="product.name">
+        <div class="mini-product-infos">
+          <h3><span>{{ product.name }}</span> <span>{{ product.price|number:'1.2-2':'fr' }} €</span></h3>
+          <p>{{ product.shortDescription }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

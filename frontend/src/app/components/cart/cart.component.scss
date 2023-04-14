@@ -1,0 +1,137 @@
+div#cart {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 50px;
+  gap: 75px;
+  padding: 35px 15px;
+}
+
+#cart-content, .total-cart-part {
+  background: white;
+  border-radius: 30px;
+}
+
+section#cart-container {
+  flex-grow: 1;
+}
+
+.total-cart-part {
+  padding: 25px;
+  width: 100%;
+}
+
+div#cart-content {
+  padding: 35px;
+  width: 100%;
+}
+
+.total-cart-part p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section#cart-total {
+  width: 325px;
+  flex-shrink: 0;
+}
+
+.cart-line {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}
+
+.cart-line img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.cart-line p {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.cart-line input {
+  width: 75px;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  background: #F4F4F4;
+  text-align: center;
+}
+
+.cart-line button {
+  width: 120px;
+  height: 45px;
+  background: transparent;
+  border: 1px solid #AF0000;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #AF0000;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+
+.total-cart-part hr {
+  border: none;
+  border-top: 1px solid #D9D9D9;
+}
+
+.total-cart-part p {
+  margin: 25px 0;
+}
+
+.total-cart-part button {
+  width: 100%;
+  height: 58px;
+  border: none;
+  color: white;
+  background: #52CCA0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#more-products {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 10px;
+}
+
+@media all and (max-width: 1000px) {
+  div#cart {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section#cart-container {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .cart-line {
+    flex-direction: column;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid lightgrey;
+    }
+  }
+  .cart-line > * {
+    margin-bottom: 15px;
+  }
+}
